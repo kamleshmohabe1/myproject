@@ -1,0 +1,44 @@
+{% extends 'userhome.html' %}
+
+
+
+{% block page %}
+<center>
+<h2>View Order & Payment List</h2>
+
+<table border='3' cellspacing="10">
+<tr>
+<th>TxnID</th>
+<th>Product ID</th>
+<th>Price</th>
+<th>User ID</th>
+<th>Date&Time</th>
+</tr>
+{% for order in orderlist %}
+<tr>
+<td>{{order.0}}</td>
+<td>{{order.1}}</td>
+<td>{{order.2}}</td>
+<td>{{order.3}}</td>
+<td>{{order.4}}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+</center>
+{% endblock %}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

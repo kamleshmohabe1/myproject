@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Login Here!!!</h3>
+<font style="font-size:20px;" color="orange" >{{output}}</font>
+<form method="post" action={{curl}}login/ >
+
+<table cellspacing="15">
+<tr>
+<td>Email(Username)</td>
+<td><input type="text" name="email" placeholder="Enter username"/></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="Password" name="password" placeholder="Enter password"/></td>
+</tr>
+
+
+<tr>
+<td>
+<input type="submit" value="Login"/>
+</td>
+</tr>
+
+
+</table>
+
+</form>
+
+
+{% endblock %}
+
+

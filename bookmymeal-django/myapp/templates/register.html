@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Register Here!!!</h3>
+<font style="font-size:20px;" color="orange" >{{output}}</font>
+<form method="post" action={{curl}}register/ >
+{% csrf_token %}
+<table cellspacing="15">
+<tr>
+<td>Name</td>
+<td><input type="text" name="name" placeholder="Enter name"/></td>
+</tr>
+
+<tr>
+<td>Email(Username)</td>
+<td><input type="text" name="email" placeholder="Enter username"/></td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="Password" name="password" placeholder="Enter password"/></td>
+</tr>
+
+<tr>
+<td>Mobile</td>
+<td><input type="text" name="mobile" placeholder="Enter mobile number"/></td>
+</tr>
+
+<tr>
+<td>Address</td>
+<td>
+<textarea name="address" cols="33" rows="5" placeholder="Enter address"></textarea>
+</td>
+</tr>
+
+<tr>
+<td>City</td>
+<td>
+<select style="width:250px" name="city">
+<option>select city</option>
+<option>Indore</option>
+<option>Ujjain</option>
+<option>Bhopal</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+Male <input type="radio" name="gender" value="male"/>
+&nbsp;&nbsp;
+Female <input type="radio" name="gender" value="female"/>
+</td>
+</tr>
+
+<tr>
+<td>
+<input type="submit" value="Register"/>
+</td>
+</tr>
+
+
+</table>
+
+</form>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,37 @@
+{% extends 'adminhome.html' %}
+
+{% block page %}
+<center>
+<h2>Add Food Category Here!!!</h2>
+
+<font style="font-size:20px;" color="orange" >{{output}}</font>
+<form method="post" enctype="multipart/form-data" action={{curl}}myadmin/addcat/ >
+{% csrf_token %}
+<table cellspacing="15">
+<tr>
+<td>Category Name</td>
+<td><input type="text" name="catnm" placeholder="Enter category name"/></td>
+</tr>
+
+<tr>
+<td>Category Icon</td>
+<td><input type="file" name="caticon" /></td>
+</tr>
+
+
+<tr>
+<td>
+<input type="submit" value="Add Category"/>
+</td>
+</tr>
+
+
+</table>
+
+</form>
+
+
+</center>
+{% endblock %}	
+
+

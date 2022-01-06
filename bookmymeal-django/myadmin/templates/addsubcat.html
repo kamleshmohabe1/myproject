@@ -1,0 +1,50 @@
+{% extends 'adminhome.html' %}
+
+{% block page %}
+<center>
+<h2>Add Food Sub Category Here!!!</h2>
+
+<font style="font-size:20px;" color="orange" >{{output}}</font>
+<form method="post" enctype="multipart/form-data" action={{curl}}myadmin/addsubcat/ >
+{% csrf_token %}
+<table cellspacing="15">
+
+<tr>
+<td>Category Name</td>
+<td>
+<select name="catnm" style="width:250px;">
+<option>Select category</option>
+{% for cat in clist %}
+	<option>{{cat.1}}</option>
+{% endfor %}
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Sub Category Name</td>
+<td><input type="text" name="subcatnm" placeholder="Enter sub category name"/></td>
+</tr>
+
+<tr>
+<td>Sub Category Icon</td>
+<td><input type="file" name="subcaticon" /></td>
+</tr>
+
+
+<tr>
+<td>
+<input type="submit" value="Add Sub Category"/>
+</td>
+</tr>
+
+
+</table>
+
+</form>
+
+
+</center>
+{% endblock %}	
+
+

@@ -1,0 +1,175 @@
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<title>Book My Meal</title>
+<link href="{% static 'images/logo.png' %}" rel="icon"/>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/jquery.dropotron-1.0.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.slidertron-1.1.js' %}"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#menu > ul').dropotron({
+			mode: 'fade',
+			globalOffsetY: 11,
+			offsetY: -15
+		});
+	});
+</script>
+</head>
+<body>
+<div id="wrapper">
+	
+<div id="header">
+		
+{% block header %}	
+		<div id="logo">
+			<h1><a href="#">Book My Meal</a></h1>
+		</div>
+		<div id="slogan">
+			<h2>An online food booking restaurant...</h2>
+		</div>
+{% endblock %}	
+
+</div>
+<!-- header ends -->
+
+<div id="menu">
+{% block menu %}	
+<ul>
+<li class="first"><a href={{curl}} >Home</a></li>
+<li><a href={{curl}}about/  >About</a></li>
+<li><a href={{curl}}contact/ >Contact</a></li>
+<li class="first">
+<span class="opener">Services<b></b></span>
+<ul>
+<li><a href={{curl}}service/ >Latest Events</a></li>
+<li><a href="#">Latest News</a></li>
+</ul>
+</li>
+<li><a href={{curl}}register/ >Register</a></li>
+<li class="last"><a href={{curl}}login/  >Login</a></li>
+</ul>
+{% endblock %}	
+<br class="clearfix" />
+</div>
+
+	<!-- nav ends -->
+{% block slider %}	
+<script type="text/javascript">
+	$(function() {
+		$('#slider').slidertron({
+			viewerSelector: '.viewer',
+			indicatorSelector: '.indicator span',
+			reelSelector: '.reel',
+			slidesSelector: '.slide',
+			speed: 'slow',
+			advanceDelay: 4000
+		});
+	});
+</script>
+	<div id="slider">
+		<div class="viewer">
+			<div class="reel">
+				<div class="slide">
+					<img src="{% static 'images/img1.png' %}" height="230" width="870" alt="" />
+				</div>
+				<div class="slide">
+					<img src="{% static 'images/img2.jpeg' %}" height="230" width="870" alt="" />
+				</div>
+				<div class="slide">
+					<img src="{% static 'images/img3.jpeg' %}" height="230" width="870" alt="" />
+				</div>
+				<div class="slide">
+					<img src="{% static 'images/img4.jpeg' %}" height="230" width="870" alt="" />
+				</div>
+				<div class="slide">
+					<img src="{% static 'images/slide05.jpg' %}" alt="" />
+				</div>
+			</div>
+		</div>
+		<div class="indicator">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+		</div>
+	</div>
+{% endblock %}	
+<!-- slider ends -->
+
+
+
+	<div id="page">
+		
+{% block page %}
+	
+		<div id="content">
+
+{% block content %}	
+			
+			<div class="box">
+				<h2>Welcome to Book My Meal</h2>
+			
+			<!-- Write your content here -->
+			
+			</div>
+
+{% endblock %}	
+
+			<br class="clearfix" />
+		</div>
+
+
+
+		<div id="sidebar">
+	
+{% block sidebar %}		
+		
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Facebook</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">LinkedIn</a></li>
+					<li class="last"><a href="#">Gmail</a></li>
+				</ul>
+
+{% endblock %}		
+				
+			</div>
+			
+		</div>
+
+<!-- sidebar ends -->		
+
+{% endblock %}	
+
+		<br class="clearfix" />
+	</div>
+
+<!-- page ends -->
+
+
+</div>
+
+<!-- wrapper ends -->
+
+<div id="footer">
+{% block footer %}
+<center>
+	<h1>All right reserved &copy; 2019-2020, Design By DjangoBatch2-3</h1>
+</center> 	
+{% endblock %}
+</div>
+
+<!-- footer ends -->
+
+</body>
+</html>
